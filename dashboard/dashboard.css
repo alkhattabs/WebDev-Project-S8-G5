@@ -1,0 +1,243 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #FDF8F3;
+}
+
+/* Dashboard Layout */
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Enhanced Sidebar Styles */
+.sidebar {
+    width: 250px;
+    background: linear-gradient(to bottom, #8B0000, #660000);
+    padding: 30px 0;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 100;
+    transition: all 0.3s ease;
+}
+
+.logo {
+    padding: 20px 30px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo h2 {
+    color: white;
+    font-size: 28px;
+    line-height: 1.3;
+    font-weight: 600;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Navigation Menu */
+.nav-menu {
+    flex-grow: 1;
+    padding: 0 15px;
+}
+
+.nav-menu a {
+    display: block;
+    padding: 15px 25px;
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    font-size: 16px;
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-menu a:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0;
+    background: rgba(255, 255, 255, 0.1);
+    transition: width 0.3s ease;
+    z-index: -1;
+}
+
+.nav-menu a:hover:before {
+    width: 100%;
+}
+
+.nav-menu a:hover {
+    color: white;
+    transform: translateX(5px);
+}
+
+.nav-menu a.active {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    font-weight: 600;
+}
+
+/* Logout Button */
+.logout-container {
+    padding: 20px 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logout-btn {
+    display: block;
+    padding: 12px 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    text-align: center;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.logout-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Main Content Area */
+.main-content {
+    margin-left: 250px;
+    width: calc(100% - 250px);
+    min-height: 100vh;
+    padding: 20px;
+    background-image: url('../images/Page Background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-content h1 {
+    color: #8B0000;
+    font-size: 56px;
+    text-align: center;
+    margin-bottom: 60px;
+    line-height: 1.4;
+    max-width: 800px;
+    padding: 0 20px;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
+    background-color: rgba(253, 248, 243, 0.8);
+    border-radius: 15px;
+    padding: 20px;
+}
+
+/* Order Options */
+.order-options {
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+    background-color: rgba(253, 248, 243, 0.8);
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.order-btn {
+    padding: 20px 40px;
+    font-size: 24px;
+    text-decoration: none;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    min-width: 200px;
+    text-align: center;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.dine-in {
+    background-color: #8B0000;
+    color: white;
+}
+
+.dine-in:hover {
+    background-color: #660000;
+    transform: translateY(-5px);
+}
+
+.take-away {
+    background-color: white;
+    color: #8B0000;
+    border: 2px solid #8B0000;
+}
+
+.take-away:hover {
+    background-color: #8B0000;
+    color: white;
+    transform: translateY(-5px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+    }
+    
+    .main-content {
+        margin-left: 200px;
+        width: calc(100% - 200px);
+    }
+    
+    .main-content h1 {
+        font-size: 42px;
+    }
+    
+    .order-options {
+        flex-direction: column;
+    }
+    
+    .order-btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .sidebar {
+        width: 180px;
+    }
+    
+    .main-content {
+        margin-left: 180px;
+        width: calc(100% - 180px);
+    }
+    
+    .main-content h1 {
+        font-size: 32px;
+    }
+    
+    .logo h2 {
+        font-size: 22px;
+    }
+    
+    .nav-menu a {
+        padding: 10px 15px;
+        font-size: 13px;
+    }
+} 
